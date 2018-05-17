@@ -6,6 +6,8 @@ import { FormsModule } from "@angular/forms";
 import { TestComponentComponent } from './test-component/test-component.component';
 import { TodoListComponent } from './todoList/todoList.component';
 import { TodoItemComponent } from './todoList/todoItem/todoItem.component';
+import  { DataService } from "./todoList/data.service";
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,13 @@ import { TodoItemComponent } from './todoList/todoItem/todoItem.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(private dataService: DataService){
+
+  }
+
+}

@@ -1,6 +1,7 @@
-<div class="todo-item" (click)="onClick()">
+<div class="todo-item" (click)="toggleStatus()">
 <p> Text </p>
-   <input type="text" [(ngModel)]="test">
-   {{test}}
+   <li *ngFor="let item of todo" type="text" [(ngModel)]="test" >
+   {{item.title}}
+  </li>
  </div>
 

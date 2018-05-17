@@ -8,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  ShowBlock: boolean;
+  constructor(){
+    this.ShowBlock = true;
+  }
+
+  toggleShow(){
+    this.ShowBlock = !this.ShowBlock;
+  }
 }

@@ -1,5 +1,7 @@
- <h2>Todo List</h2>
+ <!--<h2>Todo List</h2>-->
+ <ng-content></ng-content>
  <div class="todo-list">
-   <app-todo-item-component></app-todo-item-component>
+   <app-todo-item-component (onChangedStatus)="onCatch($event)"></app-todo-item-component>
+
  </div>
 
