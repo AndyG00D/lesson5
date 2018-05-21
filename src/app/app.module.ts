@@ -8,24 +8,30 @@ import { TodoListComponent } from './todoList/todoList.component';
 import { TodoItemComponent } from './todoList/todoItem/todoItem.component';
 import  { DataService } from "./todoList/data.service";
 
+import { HttpClientModule} from "@angular/common/http";
+import {UserService} from "./user.service";
+import {AddItemComponent} from "./add-item-component/add-item-component";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponentComponent,
     TodoListComponent,
-    TodoItemComponent
+    TodoItemComponent,
+    AddItemComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [DataService],
+  providers: [DataService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
 
-  constructor(private dataService: DataService){
+  constructor(private dataService: DataService, private userService: UserService){
 
   }
 

@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Todo} from "./todo";
-// import  { DataService } from "./data.service";
+import  { DataService } from "./data.service";
 
 @Component({
   selector: 'app-todo-list-component',
@@ -9,12 +9,19 @@ import {Todo} from "./todo";
 })
 
 
-export class TodoListComponent {
-  constructor() { }
-  // public todoList: Todo[];
+export class TodoListComponent implements OnInit{
+  constructor(private dataService: DataService ) { }
+  public todoData: Todo[];
   // constructor(private){}
 
   onCatch(emit:Todo) {
-    console.log(emit.title);
+    // console.log(emit.tit;
   }
+
+  ngOnInit(){
+    this.dataService.getNewTodo().subscribe((data: Todo) => {
+      console.log(data);
+    });
+  }
+
 }

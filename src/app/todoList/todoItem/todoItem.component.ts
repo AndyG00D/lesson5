@@ -28,6 +28,6 @@ export class TodoItemComponent{
 
 
   public toggleStatus(){
-    this.onChangedStatus.emit(this.todo);
+    this.onChangedStatus.emit(this.todo[0]);
   }
 }
